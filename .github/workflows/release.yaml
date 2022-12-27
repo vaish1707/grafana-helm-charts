@@ -30,15 +30,11 @@ jobs:
           helm repo add bitnami https://charts.bitnami.com/bitnami
           helm repo add hashicorp https://helm.releases.hashicorp.com
           helm repo add minio https://helm.min.io
-      - name: Prepare GPG key
+      - name: Configure GPG Key
         run: |
-          gpg_dir=.cr-gpg
-          mkdir "$gpg_dir"
-          keyring="$gpg_dir/secring.gpg"
-          "$GPG_SIGNING_KEY" > "$keyring"
-          echo "CR_KEYRING=$keyring" >> "$GITHUB_ENV"
+          echo -n "$GPG_SIGNING_KEY" | gpg --import
         env:
-          GPG_SIGNING_KEY: "${{ secrets.GPG_SIGNING_KEY }}"
+          GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.1.0
