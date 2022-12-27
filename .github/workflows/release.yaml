@@ -30,6 +30,12 @@ jobs:
           helm repo add bitnami https://charts.bitnami.com/bitnami
           helm repo add hashicorp https://helm.releases.hashicorp.com
           helm repo add minio https://helm.min.io
+      - name: Import GPG Key
+        uses: crazy-max/ghaction-import-gpg@v1
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
       - name: Prepare GPG key
         run: |
           gpg_dir=.cr-gpg
@@ -39,6 +45,7 @@ jobs:
           echo "CR_KEYRING=$keyring" >> "$GITHUB_ENV"
         env:
           GPG_KEY_BASE64: "${{ secrets.GPG_KEY_BASE64 }}"
+          PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.1.0
         env:
