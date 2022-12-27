@@ -3,7 +3,7 @@ entries:
   grafana-agent-operator:
   - apiVersion: v2
     appVersion: 0.25.1
-    created: "2022-12-27T13:33:25.831561913Z"
+    created: "2022-12-27T13:57:46.744111772Z"
     description: A Helm chart for Grafana Agent Operator
     digest: 0a00fdc2dc77f73ad818b4ba100207b9743b8610a0ab1b4c54ef6c29dbdd15c5
     home: https://grafana.com/docs/agent/latest/
@@ -21,7 +21,7 @@ entries:
   minio:
   - apiVersion: v1
     appVersion: master
-    created: "2022-12-27T13:33:25.867647068Z"
+    created: "2022-12-27T13:57:46.758624944Z"
     description: High Performance, Kubernetes Native Object Storage
     digest: 6fbf8a38939ad826e669b7a0a2b53d05310eddf91a115585aa481b48ffe982de
     home: https://min.io
@@ -42,7 +42,7 @@ entries:
   tempo-distributed:
   - apiVersion: v2
     appVersion: 1.5.0
-    created: "2022-12-27T13:33:25.814058883Z"
+    created: "2022-12-27T13:57:46.739262666Z"
     dependencies:
     - alias: minio
       condition: minio.enabled
@@ -76,4 +76,4 @@ entries:
     urls:
     - tempo-distributed-0.27.11.tgz
     version: 0.27.11
-generated: "2022-12-27T13:33:25.766634245Z"
+generated: "2022-12-27T13:57:46.696296761Z"
