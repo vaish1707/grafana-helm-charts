@@ -32,7 +32,7 @@ jobs:
           helm repo add minio https://helm.min.io
       - name: Configure GPG Key
         run: |
-          echo -n "$GPG_SIGNING_KEY" | gpg --import
+          gpg --import "$GPG_SIGNING_KEY"
         env:
           GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
 
