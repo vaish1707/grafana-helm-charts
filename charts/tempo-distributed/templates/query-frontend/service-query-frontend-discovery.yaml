@@ -37,6 +37,9 @@ spec:
     - name: tempo-query-metrics
       port: 16687
       targetPort: jaeger-metrics
+    - name: tempo-query-jaeger-grpc
+      port: 16685
+      targetPort: 16685
     {{- end }}
   selector:
     {{- include "tempo.selectorLabels" (dict "ctx" . "component" "query-frontend") | nindent 4 }}
