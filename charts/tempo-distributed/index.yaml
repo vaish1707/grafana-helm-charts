@@ -74,6 +74,6 @@ entries:
     - https://github.com/grafana/tempo
     type: application
     urls:
-    - tempo-distributed-0.27.14.tgz
-    version: 0.27.14
+    - tempo-distributed-0.27.15.tgz
+    version: 0.27.15
 generated: "2022-12-27T13:57:46.696296761Z"

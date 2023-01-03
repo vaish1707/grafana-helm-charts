@@ -34,9 +34,6 @@ spec:
     - name: tempo-query-jaeger-ui
       port: 16686
       targetPort: 16686
-    - name: tempo-query-metrics
-      port: 16687
-      targetPort: jaeger-metrics
     - name: tempo-query-jaeger-grpc
       port: 16685
       targetPort: 16685
