@@ -105,6 +105,8 @@ spec:
           name: jaeger-ui
         - containerPort: 16687
           name: jaeger-metrics
+        - name: jaeger-grpc
+          containerPort: 16685
         env:
           {{- if .Values.tempoQuery.extraEnv }}
             {{- toYaml .Values.tempoQuery.extraEnv | nindent 12 }}
