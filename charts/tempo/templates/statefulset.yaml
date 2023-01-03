@@ -103,8 +103,6 @@ spec:
         ports:
         - containerPort: 16686
           name: jaeger-ui
-        - containerPort: 16687
-          name: jaeger-metrics
         - name: jaeger-grpc
           containerPort: 16685
         env:
